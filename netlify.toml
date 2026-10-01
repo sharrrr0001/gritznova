@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Netlify auto-installs its Next.js runtime (@netlify/plugin-nextjs / OpenNext adapter),
+# which turns route handlers like /api/chat into Netlify Functions with streaming support.
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

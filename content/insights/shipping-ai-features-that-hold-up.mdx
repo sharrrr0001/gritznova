@@ -1,0 +1,37 @@
+Large language models make impressive demos easy. Production is harder. Real users ask unexpected questions, data changes, and costs scale with traffic. Here is the checklist we use before any AI feature goes live.
+
+## 1. Start from a business metric
+
+"Add AI" isn't a goal. "Resolve 30% of routine support tickets without a human" is. Pick one metric the feature must move, and a guardrail metric it must not hurt, such as customer satisfaction.
+
+## 2. Build an evaluation set before you build the feature
+
+Collect 50–200 real examples of inputs and what a good answer looks like. This becomes your test suite. Every prompt change, model upgrade or retrieval tweak is scored against it, so you know whether you've made things better or worse.
+
+## 3. Ground answers in your own data
+
+Retrieval-augmented generation (RAG) lets the model answer from your documents instead of guessing. Keep these in mind:
+
+- **Chunk by meaning**, not by fixed character counts.
+- **Return sources** so users, and your team, can verify answers.
+- **Respect permissions.** Only retrieve what the current user is allowed to see.
+
+## 4. Design for failure
+
+Models will sometimes be wrong. Plan for it:
+
+- Give the assistant a clear way to say "I don't know".
+- Offer a **human handoff** for high-stakes or frustrated conversations.
+- Validate structured outputs before acting on them.
+
+## 5. Watch cost and latency from day one
+
+Stream responses so users see progress immediately. Cache stable prompt prefixes. Use the smallest effort setting that meets your quality bar, and track cost per resolved task rather than cost per request.
+
+## 6. Monitor in production
+
+Log inputs, outputs and user feedback with appropriate privacy controls. Review a sample every week. Your evaluation set should grow with every real-world failure you find.
+
+---
+
+Thinking about an AI feature for your product? [Book a free consultation](/#contact) and we'll help you scope it, from the business case to the evaluation plan.
