@@ -1,0 +1,7 @@
+# Never upload local secrets or build output; Vercel uses the env vars set in the project.
+.env
+.env.local
+.env*.local
+.next
+node_modules
+.netlify
